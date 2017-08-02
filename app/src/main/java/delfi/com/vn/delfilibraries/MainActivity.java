@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import delfi.com.vn.tpcreative.common.activity.BaseActivity;
 import delfi.com.vn.tpcreative.common.ui.recycleview.RecycleView;
 
@@ -15,14 +16,12 @@ public class MainActivity extends BaseActivity implements RecycleView.ListenerRe
 
     @BindView(R.id.rlHome)
     RecyclerView recyclerView;
-    int resource ;
     List<CProduct> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        resource = R.layout.home_cell;
         list = new ArrayList<>();
         list.add(new CProduct("a"));
         list.add(new CProduct("b"));
@@ -33,8 +32,8 @@ public class MainActivity extends BaseActivity implements RecycleView.ListenerRe
         list.add(new CProduct("h"));
         list.add(new CProduct("j"));
         list.add(new CProduct("k"));
+        RecycleView.instance(this,recyclerView,R.layout.home_cell,this).adapterRecycleView().setDataSource( new ArrayList<Object>(list));
 
-        RecycleView.instance(this,recyclerView,resource,this).adapterRecycleView().setDataSource( new ArrayList<Object>(list));
     }
 
     @Override
@@ -43,6 +42,8 @@ public class MainActivity extends BaseActivity implements RecycleView.ListenerRe
         TextView textView = view.findViewById(R.id.tvHomeCell);
         textView.setText(product.name);
     }
+
+    
 
 }
 
