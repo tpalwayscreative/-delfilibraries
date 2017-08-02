@@ -5,9 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import delfi.com.vn.tpcreative.common.adapter.BaseAdapter;
 import delfi.com.vn.tpcreative.common.adapter.BaseHolder;
-import delfi.com.vn.tpcreative.method.CAnyObject;
 
-public class AdapterRecycleView extends BaseAdapter<CAnyObject,BaseHolder> {
+public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
 
     private Activity activity ;
     public static final String TAG = AdapterRecycleView.class.getSimpleName();
@@ -26,17 +25,19 @@ public class AdapterRecycleView extends BaseAdapter<CAnyObject,BaseHolder> {
         return new AdapterRecycleViewHolder(inflater.inflate(resource, parent, false));
     }
 
-    public class  AdapterRecycleViewHolder extends BaseHolder<CAnyObject> {
-
+    public class  AdapterRecycleViewHolder extends BaseHolder<Object> {
+        private View view ;
         public AdapterRecycleViewHolder(View view) {
             super(view);
+            this.view = view;
         }
 
         @Override
-        public void bind(CAnyObject data, int position) {
+        public void bind(Object data, int position) {
             super.bind(data, position);
-            listenerAdapterRecycleView.onShowData(data);
+            listenerAdapterRecycleView.onShowData(data,view);
         }
+        
     }
 
     @Override
@@ -45,7 +46,7 @@ public class AdapterRecycleView extends BaseAdapter<CAnyObject,BaseHolder> {
     }
 
     public interface ListenerAdapterRecycleView {
-        void onShowData(CAnyObject object);
+        void onShowData(Object object,View view);
     }
 
 
