@@ -6,7 +6,6 @@ package delfi.com.vn.delfilibraries;
 
 public class CProduct {
     public String name ;
-
     public CProduct(String name){
         this.name = name ;
     }
