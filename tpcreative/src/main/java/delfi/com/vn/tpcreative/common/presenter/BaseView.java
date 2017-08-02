@@ -6,4 +6,5 @@ public interface BaseView {
     void onShowLoading();
     void onHideLoading();
     Context getContext();
+
 }

@@ -6,12 +6,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.util.Log;
 import android.view.MenuItem;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import delfi.com.vn.scanmanager.R;
-import delfi.com.vn.scanmanager.common.ui.TypefaceSpan;
+import delfi.com.vn.tpcreative.R;
+import delfi.com.vn.tpcreative.common.ui.TypefaceSpan;
 
 public class BaseActivity extends AppCompatActivity {
     Unbinder unbinder;
@@ -19,6 +20,8 @@ public class BaseActivity extends AppCompatActivity {
     protected Typeface mTfLight;
     protected ActionBar actionBar ;
     int onStartCount = 0;
+    public static final String TAG = BaseActivity.class.getSimpleName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,9 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
+        Log.d(TAG,"action here");
         unbinder = ButterKnife.bind(this);
+
     }
 
     @Override
@@ -97,6 +102,6 @@ public class BaseActivity extends AppCompatActivity {
         } else if (onStartCount == 1) {
             onStartCount++;
         }
-
     }
+
 }
