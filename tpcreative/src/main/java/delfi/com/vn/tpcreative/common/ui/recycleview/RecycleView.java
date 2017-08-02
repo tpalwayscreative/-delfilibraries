@@ -18,11 +18,12 @@ public class RecycleView implements AdapterRecycleView.ListenerAdapterRecycleVie
     private Activity context ;
     private int reSource ;
 
-    public static RecycleView instance(Activity context){
+    public static RecycleView instance(Activity context,RecyclerView recyclerView){
         if (instance==null){
             instance = new RecycleView();
         }
         instance.context = context ;
+        instance.recyclerView = recyclerView ;
         return  instance;
     }
 
