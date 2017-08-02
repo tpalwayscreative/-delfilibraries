@@ -10,8 +10,8 @@ import android.view.MenuItem;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import delfi.com.vn.scanmanager.R;
-import delfi.com.vn.scanmanager.common.ui.TypefaceSpan;
+import delfi.com.vn.tpcreative.R;
+import delfi.com.vn.tpcreative.common.ui.TypefaceSpan;
 
 public class BaseActivity extends AppCompatActivity {
     Unbinder unbinder;
