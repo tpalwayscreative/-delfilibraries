@@ -20,6 +20,7 @@ public class BaseActivity extends AppCompatActivity {
     protected ActionBar actionBar ;
     int onStartCount = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +98,6 @@ public class BaseActivity extends AppCompatActivity {
         } else if (onStartCount == 1) {
             onStartCount++;
         }
-
     }
+
 }
