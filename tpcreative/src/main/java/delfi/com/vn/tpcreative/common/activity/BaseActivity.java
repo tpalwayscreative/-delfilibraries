@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.util.Log;
 import android.view.MenuItem;
 
 import butterknife.ButterKnife;
@@ -19,6 +20,7 @@ public class BaseActivity extends AppCompatActivity {
     protected Typeface mTfLight;
     protected ActionBar actionBar ;
     int onStartCount = 0;
+    public static final String TAG = BaseActivity.class.getSimpleName();
 
 
     @Override
@@ -45,7 +47,9 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
+        Log.d(TAG,"action here");
         unbinder = ButterKnife.bind(this);
+
     }
 
     @Override
