@@ -49,8 +49,15 @@ public class RecycleView implements AdapterRecycleView.ListenerAdapterRecycleVie
         listenerRecycleView.onShowData(object,view);
     }
 
+    @Override
+    public void onShowPosition(int position) {
+        listenerRecycleView.onShowPosition(position);
+    }
+
     public interface ListenerRecycleView {
         void onShowData(Object anyObject,View view);
+        void onShowPosition(int position);
     }
+
 
 }

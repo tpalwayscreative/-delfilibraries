@@ -16,10 +16,9 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
     private Activity activity ;
     private int resource ;
     public static final String TAG = AdapterRecycleView.class.getSimpleName();
-
-
+    private AdapterRecycleViewHolder adapterRecycleViewHolder;
     private ListenerAdapterRecycleView listenerAdapterRecycleView ;
-    private int typeResource ;
+
 
     public AdapterRecycleView(LayoutInflater inflater, Activity activity,ListenerAdapterRecycleView listenerAdapterRecycleView,int resource){
         super(inflater);
@@ -30,13 +29,13 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
 
     @Override
     public BaseHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new AdapterRecycleViewHolder(inflater.inflate(resource, parent, false));
+        this.adapterRecycleViewHolder = new AdapterRecycleViewHolder(inflater.inflate(resource, parent, false));
+        return this.adapterRecycleViewHolder;
     }
 
     public class  AdapterRecycleViewHolder extends BaseHolder<Object> {
         private View view ;
-        private int resource ;
-        private LinearLayout layout ;
+        private int position ;
         public AdapterRecycleViewHolder(View view) {
             super(view);
             this.view = view;
@@ -45,11 +44,22 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
         @Override
         public void bind(Object data, int position) {
             super.bind(data, position);
+            this.position = position ;
             listenerAdapterRecycleView.onShowData(data,view);
         }
 
+        public void onClick(View view){
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listenerAdapterRecycleView.onShowPosition(position);
+                }
+            });
+        }
+    }
 
-
+    public AdapterRecycleViewHolder getAdapterRecycleViewHolder(){
+        return this.adapterRecycleViewHolder;
     }
 
     @Override
@@ -59,7 +69,7 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
 
     public interface ListenerAdapterRecycleView {
         void onShowData(Object object,View view);
+        void onShowPosition(int position);
     }
-
 
 }

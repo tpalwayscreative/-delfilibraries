@@ -3,6 +3,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import delfi.com.vn.tpcreative.common.activity.BaseActivity;
+import delfi.com.vn.tpcreative.common.ui.recycleview.AdapterRecycleView;
 import delfi.com.vn.tpcreative.common.ui.recycleview.RecycleView;
 
 public class MainActivity extends BaseActivity implements RecycleView.ListenerRecycleView {
@@ -17,6 +19,8 @@ public class MainActivity extends BaseActivity implements RecycleView.ListenerRe
     @BindView(R.id.rlHome)
     RecyclerView recyclerView;
     List<CProduct> list;
+    RecycleView customRecycleView ;
+    AdapterRecycleView adapterRecycleView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +36,22 @@ public class MainActivity extends BaseActivity implements RecycleView.ListenerRe
         list.add(new CProduct("h"));
         list.add(new CProduct("j"));
         list.add(new CProduct("k"));
-        RecycleView.instance(this,recyclerView,R.layout.home_cell,this).adapterRecycleView().setDataSource( new ArrayList<Object>(list));
-
+        customRecycleView = RecycleView.instance(this,recyclerView,R.layout.home_cell,this);
+        adapterRecycleView = customRecycleView.adapterRecycleView();
+        adapterRecycleView.setDataSource(new ArrayList(list));
     }
 
     @Override
     public void onShowData(Object anyObject, View view) {
         CProduct product = (CProduct) anyObject;
         TextView textView = view.findViewById(R.id.tvHomeCell);
+        adapterRecycleView.getAdapterRecycleViewHolder().onClick(view.findViewById(R.id.llHomeCell));
         textView.setText(product.name);
     }
 
-    
-
+    @Override
+    public void onShowPosition(int position) {
+        Toast.makeText(getApplicationContext(),"Show position now : " + position,Toast.LENGTH_SHORT).show();
+    }
 }
 
