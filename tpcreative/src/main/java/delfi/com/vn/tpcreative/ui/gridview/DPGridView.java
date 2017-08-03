@@ -64,7 +64,6 @@ public class DPGridView implements GridViewAdapter.ListenerGridViewAdapter,Adapt
 
     @Override
     public void onShowPosition(int position) {
-        listenerGridViewAdapter.onShowPosition(position);
     }
 
     public interface ListenerGridView extends GridViewAdapter.ListenerGridViewAdapter {
