@@ -16,7 +16,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import delfi.com.vn.tpcreative.Constant;
+import delfi.com.vn.tpcreative.Configs;
 import delfi.com.vn.tpcreative.R;
 import delfi.com.vn.tpcreative.common.utils.Utils;
 
@@ -181,12 +181,12 @@ public class FontButton extends AppCompatButton {
         // Create text builder with non breaking space letter between
         StringBuilder builder;
         if (textAllCaps) {
-            builder = new StringBuilder(originalText.toString().toUpperCase().replaceAll("(.)", Constant.NON_BREAKING_SPACE + "$1"));
+            builder = new StringBuilder(originalText.toString().toUpperCase().replaceAll("(.)", Configs.NON_BREAKING_SPACE + "$1"));
         } else {
-            builder = new StringBuilder(originalText.toString().replaceAll("(.)", Constant.NON_BREAKING_SPACE + "$1"));
+            builder = new StringBuilder(originalText.toString().replaceAll("(.)", Configs.NON_BREAKING_SPACE + "$1"));
         }
 
-        float nonBreakingSpace = getPaint().measureText(Constant.NON_BREAKING_SPACE);
+        float nonBreakingSpace = getPaint().measureText(Configs.NON_BREAKING_SPACE);
         Log.d(TAG, "nonBreakingSpace = " + nonBreakingSpace);
 
         float scale = spacing * pxScale / nonBreakingSpace;

@@ -4,7 +4,7 @@ package delfi.com.vn.tpcreative;
  * Created by PC on 7/17/2017.
  */
 
-public class Constant {
+public class Configs {
     public static final String TAG_URL_SCANNER_SYSTEM = "/system/media/audio/scanner/";
     public static final String TAG_SHARE_PREFERENCES_NAME = BuildConfig.APPLICATION_ID;
     public static final String TAG_SCAN_ENGINE = "scan_engine";
