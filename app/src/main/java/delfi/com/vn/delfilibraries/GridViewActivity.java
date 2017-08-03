@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import delfi.com.vn.tpcreative.common.activity.BaseActivity;
 import delfi.com.vn.tpcreative.ui.gridview.DPGridView;
 import delfi.com.vn.tpcreative.ui.gridview.GridViewAdapter;
@@ -48,26 +49,25 @@ public class GridViewActivity extends BaseActivity implements DPGridView.Listene
     public void onShowData(Object object, Object view) {
         CProduct product = (CProduct)object;
         viewHolder = (ViewHolder) view;
-        viewHolder.nameTextView.setText(product.name);
+        viewHolder.textView.setText(product.name);
     }
 
     @Override
     public void onShowPosition(int position) {
-
         Toast.makeText(getApplicationContext(),"Show position now : " + position,Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
     public void onSetView(View view) {
-        viewHolder = new ViewHolder((TextView) view.findViewById(R.id.tvHomeCell)) ;
+        viewHolder = new ViewHolder(view) ;
         view.setTag(viewHolder);
     }
 
-    private class ViewHolder {
-        public TextView nameTextView;
-        public ViewHolder(TextView nameTextView) {
-            this.nameTextView = nameTextView;
+    protected class ViewHolder {
+        @BindView(R.id.tvHomeCell)
+        TextView textView ;
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
         }
     }
 

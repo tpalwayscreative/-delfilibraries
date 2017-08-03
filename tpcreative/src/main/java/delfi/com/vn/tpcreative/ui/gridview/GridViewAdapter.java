@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 public class GridViewAdapter extends BaseAdapter {
 
   private final Context mContext;

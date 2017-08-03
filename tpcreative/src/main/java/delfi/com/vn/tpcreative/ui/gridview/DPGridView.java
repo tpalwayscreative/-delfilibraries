@@ -11,6 +11,7 @@ import android.widget.ListAdapter;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
 import delfi.com.vn.tpcreative.common.adapter.DividerItemDecoration;
 import delfi.com.vn.tpcreative.ui.recycleview.RecyclerViewAdapter;
 
