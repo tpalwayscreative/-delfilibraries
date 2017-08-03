@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
@@ -17,8 +16,7 @@ public class MainActivity extends BaseActivity implements DPRecyclerView.Listene
     @BindView(R.id.rlHome)
     RecyclerView recyclerView;
     List<CProduct> list;
-    DPRecyclerView customDPRecyclerView;
-    AdapterRecycleView adapterRecycleView ;
+    AdapterRecycleView adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +32,15 @@ public class MainActivity extends BaseActivity implements DPRecyclerView.Listene
         list.add(new CProduct("h"));
         list.add(new CProduct("j"));
         list.add(new CProduct("k"));
-        customDPRecyclerView = DPRecyclerView.instance(this,recyclerView,R.layout.home_cell,this);
-        adapterRecycleView = customDPRecyclerView.adapterRecycleView();
-        adapterRecycleView.setDataSource(new ArrayList(list));
-
+        adapter = DPRecyclerView.instance(this,recyclerView,R.layout.home_cell,this).adapterRecycleView();
+        adapter.setDataSource(new ArrayList(list));
     }
 
     @Override
     public void onShowData(Object anyObject, View view) {
         CProduct product = (CProduct) anyObject;
         TextView textView = view.findViewById(R.id.tvHomeCell);
-        adapterRecycleView.getAdapterRecycleViewHolder().onClick(view.findViewById(R.id.llHomeCell));
+        adapter.getAdapterRecycleViewHolder().onClick(view.findViewById(R.id.llHomeCell));
         textView.setText(product.name);
     }
 

@@ -31,6 +31,7 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
     public class  AdapterRecycleViewHolder extends BaseHolder<Object> {
         private View view ;
         private int position ;
+
         public AdapterRecycleViewHolder(View view) {
             super(view);
             this.view = view;

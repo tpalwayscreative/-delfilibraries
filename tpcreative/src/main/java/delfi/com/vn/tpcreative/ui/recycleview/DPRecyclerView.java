@@ -54,9 +54,11 @@ public class DPRecyclerView implements AdapterRecycleView.ListenerAdapterRecycle
         listenerRecycleView.onShowPosition(position);
     }
 
-    public interface ListenerRecycleView {
-        void onShowData(Object anyObject, View view);
+    public interface ListenerRecycleView extends AdapterRecycleView.ListenerAdapterRecycleView {
+        @Override
         void onShowPosition(int position);
+        @Override
+        void onShowData(Object object, View view);
     }
 
 
