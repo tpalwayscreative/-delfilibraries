@@ -1,4 +1,4 @@
-package delfi.com.vn.tpcreative.common.ui.recycleview;
+package delfi.com.vn.tpcreative.ui.recycleview;
 import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,19 +10,19 @@ import delfi.com.vn.tpcreative.common.adapter.DividerItemDecoration;
  * Created by PC on 8/2/2017.
  */
 
-public class RecycleView implements AdapterRecycleView.ListenerAdapterRecycleView {
+public class DPRecyclerView implements AdapterRecycleView.ListenerAdapterRecycleView {
 
     private AdapterRecycleView adapter;
     private LinearLayoutManager llm ;
-    private static RecycleView instance ;
+    private static DPRecyclerView instance ;
     private RecyclerView recyclerView ;
     private Activity context ;
     private int reSource ;
     private ListenerRecycleView listenerRecycleView;
 
-    public static RecycleView instance(Activity context,RecyclerView recyclerView,int reSource,ListenerRecycleView listenerRecycleView){
+    public static DPRecyclerView instance(Activity context, RecyclerView recyclerView, int reSource, ListenerRecycleView listenerRecycleView){
         if (instance==null){
-            instance = new RecycleView();
+            instance = new DPRecyclerView();
         }
         instance.context = context ;
         instance.recyclerView = recyclerView ;
@@ -55,7 +55,7 @@ public class RecycleView implements AdapterRecycleView.ListenerAdapterRecycleVie
     }
 
     public interface ListenerRecycleView {
-        void onShowData(Object anyObject,View view);
+        void onShowData(Object anyObject, View view);
         void onShowPosition(int position);
     }
 

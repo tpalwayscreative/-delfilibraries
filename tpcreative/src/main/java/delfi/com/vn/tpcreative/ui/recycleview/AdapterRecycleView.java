@@ -1,13 +1,9 @@
-package delfi.com.vn.tpcreative.common.ui.recycleview;
+package delfi.com.vn.tpcreative.ui.recycleview;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import delfi.com.vn.tpcreative.R;
 import delfi.com.vn.tpcreative.common.adapter.BaseAdapter;
 import delfi.com.vn.tpcreative.common.adapter.BaseHolder;
 
@@ -18,7 +14,6 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
     public static final String TAG = AdapterRecycleView.class.getSimpleName();
     private AdapterRecycleViewHolder adapterRecycleViewHolder;
     private ListenerAdapterRecycleView listenerAdapterRecycleView ;
-
 
     public AdapterRecycleView(LayoutInflater inflater, Activity activity,ListenerAdapterRecycleView listenerAdapterRecycleView,int resource){
         super(inflater);
@@ -68,7 +63,7 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
     }
 
     public interface ListenerAdapterRecycleView {
-        void onShowData(Object object,View view);
+        void onShowData(Object object, View view);
         void onShowPosition(int position);
     }
 
