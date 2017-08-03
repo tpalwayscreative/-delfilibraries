@@ -7,18 +7,18 @@ import android.view.ViewGroup;
 import delfi.com.vn.tpcreative.common.adapter.BaseAdapter;
 import delfi.com.vn.tpcreative.common.adapter.BaseHolder;
 
-public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
+public class RecyclerViewAdapter extends BaseAdapter<Object,BaseHolder> {
 
     private Activity activity ;
     private int resource ;
-    public static final String TAG = AdapterRecycleView.class.getSimpleName();
+    public static final String TAG = RecyclerViewAdapter.class.getSimpleName();
     private AdapterRecycleViewHolder adapterRecycleViewHolder;
-    private ListenerAdapterRecycleView listenerAdapterRecycleView ;
+    private ListenerRecycleViewAdapter listenerRecycleViewAdapter ;
 
-    public AdapterRecycleView(LayoutInflater inflater, Activity activity,ListenerAdapterRecycleView listenerAdapterRecycleView,int resource){
+    public RecyclerViewAdapter(LayoutInflater inflater, Activity activity, ListenerRecycleViewAdapter listenerRecycleViewAdapter, int resource){
         super(inflater);
         this.activity = activity ;
-        this.listenerAdapterRecycleView = listenerAdapterRecycleView ;
+        this.listenerRecycleViewAdapter = listenerRecycleViewAdapter ;
         this.resource = resource;
     }
 
@@ -41,14 +41,14 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
         public void bind(Object data, int position) {
             super.bind(data, position);
             this.position = position ;
-            listenerAdapterRecycleView.onShowData(data,view);
+            listenerRecycleViewAdapter.onShowData(data,view);
         }
 
         public void onClick(View view){
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listenerAdapterRecycleView.onShowPosition(position);
+                    listenerRecycleViewAdapter.onShowPosition(position);
                 }
             });
         }
@@ -63,7 +63,7 @@ public class AdapterRecycleView extends BaseAdapter<Object,BaseHolder> {
         return super.getItemCount();
     }
 
-    public interface ListenerAdapterRecycleView {
+    public interface ListenerRecycleViewAdapter {
         void onShowData(Object object, View view);
         void onShowPosition(int position);
     }

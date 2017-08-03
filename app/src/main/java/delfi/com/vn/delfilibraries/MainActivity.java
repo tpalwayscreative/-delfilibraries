@@ -1,4 +1,5 @@
 package delfi.com.vn.delfilibraries;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
 import delfi.com.vn.tpcreative.common.activity.BaseActivity;
-import delfi.com.vn.tpcreative.ui.recycleview.AdapterRecycleView;
+import delfi.com.vn.tpcreative.ui.recycleview.RecyclerViewAdapter;
 import delfi.com.vn.tpcreative.ui.recycleview.DPRecyclerView;
 
 public class MainActivity extends BaseActivity implements DPRecyclerView.ListenerRecycleView {
@@ -16,7 +17,7 @@ public class MainActivity extends BaseActivity implements DPRecyclerView.Listene
     @BindView(R.id.rlHome)
     RecyclerView recyclerView;
     List<CProduct> list;
-    AdapterRecycleView adapter ;
+    RecyclerViewAdapter adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class MainActivity extends BaseActivity implements DPRecyclerView.Listene
     @Override
     public void onShowPosition(int position) {
         Toast.makeText(getApplicationContext(),"Show position now : " + position,Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),GridViewActivity.class);
+        startActivity(intent);
     }
 
 }

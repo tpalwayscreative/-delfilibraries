@@ -10,9 +10,9 @@ import delfi.com.vn.tpcreative.common.adapter.DividerItemDecoration;
  * Created by PC on 8/2/2017.
  */
 
-public class DPRecyclerView implements AdapterRecycleView.ListenerAdapterRecycleView {
+public class DPRecyclerView implements RecyclerViewAdapter.ListenerRecycleViewAdapter {
 
-    private AdapterRecycleView adapter;
+    private RecyclerViewAdapter adapter;
     private LinearLayoutManager llm ;
     private static DPRecyclerView instance ;
     private RecyclerView recyclerView ;
@@ -36,11 +36,11 @@ public class DPRecyclerView implements AdapterRecycleView.ListenerAdapterRecycle
         llm = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(llm);
         recyclerView.addItemDecoration(new DividerItemDecoration(context,LinearLayoutManager.VERTICAL));
-        adapter = new AdapterRecycleView(context.getLayoutInflater(), context,this,reSource);
+        adapter = new RecyclerViewAdapter(context.getLayoutInflater(), context,this,reSource);
         recyclerView.setAdapter(adapter);
     }
 
-    public AdapterRecycleView adapterRecycleView(){
+    public RecyclerViewAdapter adapterRecycleView(){
         return adapter ;
     }
 
@@ -54,7 +54,7 @@ public class DPRecyclerView implements AdapterRecycleView.ListenerAdapterRecycle
         listenerRecycleView.onShowPosition(position);
     }
 
-    public interface ListenerRecycleView extends AdapterRecycleView.ListenerAdapterRecycleView {
+    public interface ListenerRecycleView extends RecyclerViewAdapter.ListenerRecycleViewAdapter {
         @Override
         void onShowPosition(int position);
         @Override
