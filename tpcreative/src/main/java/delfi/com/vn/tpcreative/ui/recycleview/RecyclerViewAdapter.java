@@ -29,7 +29,6 @@ public class RecyclerViewAdapter extends BaseAdapter<Object,BaseHolder> {
     }
 
     public class  AdapterRecycleViewHolder extends BaseHolder<Object> {
-        private View view ;
         private int position ;
 
         public AdapterRecycleViewHolder(View view) {

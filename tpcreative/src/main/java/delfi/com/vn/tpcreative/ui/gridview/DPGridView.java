@@ -54,8 +54,8 @@ public class DPGridView implements GridViewAdapter.ListenerGridViewAdapter,Adapt
     }
 
     @Override
-    public void onShowData(Object object, Object view) {
-        listenerGridViewAdapter.onShowData(object,view);
+    public void onShowData(Object object) {
+        listenerGridViewAdapter.onShowData(object);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class DPGridView implements GridViewAdapter.ListenerGridViewAdapter,Adapt
 
     public interface ListenerGridView extends GridViewAdapter.ListenerGridViewAdapter {
         @Override
-        void onShowData(Object object, Object view);
+        void onShowData(Object object);
         @Override
         void onSetView(View view);
         @Override

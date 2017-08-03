@@ -46,9 +46,8 @@ public class GridViewActivity extends BaseActivity implements DPGridView.Listene
     }
 
     @Override
-    public void onShowData(Object object, Object view) {
+    public void onShowData(Object object) {
         CProduct product = (CProduct)object;
-        viewHolder = (ViewHolder) view;
         viewHolder.textView.setText(product.name);
     }
 
@@ -59,7 +58,7 @@ public class GridViewActivity extends BaseActivity implements DPGridView.Listene
 
     @Override
     public void onSetView(View view) {
-        viewHolder = new ViewHolder(view) ;
+        viewHolder = new ViewHolder(view);
         view.setTag(viewHolder);
     }
 
@@ -71,5 +70,5 @@ public class GridViewActivity extends BaseActivity implements DPGridView.Listene
         }
     }
 
-    
+
 }

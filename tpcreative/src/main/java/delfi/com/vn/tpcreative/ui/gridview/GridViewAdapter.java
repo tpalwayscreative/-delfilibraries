@@ -1,6 +1,7 @@
 
 package delfi.com.vn.tpcreative.ui.gridview;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class GridViewAdapter extends BaseAdapter {
   private int resource ;
   private View view ;
   private ListenerGridViewAdapter listenerGridViewAdapter ;
+  public static final String TAG = GridViewAdapter.class.getSimpleName();
 
   public GridViewAdapter(Context context, List<Object>list,int resource,ListenerGridViewAdapter listenerGridViewAdapter) {
     this.mContext = context;
@@ -49,7 +51,7 @@ public class GridViewAdapter extends BaseAdapter {
       convertView = layoutInflater.inflate(resource,null);
       listenerGridViewAdapter.onSetView(convertView);
     }
-    listenerGridViewAdapter.onShowData(list.get(position),convertView.getTag());
+    listenerGridViewAdapter.onShowData(list.get(position));
     return convertView;
   }
 
@@ -62,7 +64,7 @@ public class GridViewAdapter extends BaseAdapter {
   }
 
   public interface ListenerGridViewAdapter {
-    void onShowData(Object object, Object view);
+    void onShowData(Object object);
     void onShowPosition(int position);
     void onSetView(View view);
   }

@@ -50,6 +50,7 @@ public class MainActivity extends BaseActivity implements DPRecyclerView.Listene
     @Override
     public void onSetView(View view) {
         viewHolder = new ViewHolder(view);
+        view.setTag(viewHolder);
     }
 
     @Override
