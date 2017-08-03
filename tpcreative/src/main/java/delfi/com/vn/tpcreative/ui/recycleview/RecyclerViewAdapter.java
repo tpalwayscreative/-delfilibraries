@@ -34,14 +34,14 @@ public class RecyclerViewAdapter extends BaseAdapter<Object,BaseHolder> {
 
         public AdapterRecycleViewHolder(View view) {
             super(view);
-            this.view = view;
+            listenerRecycleViewAdapter.onSetView(view);
         }
 
         @Override
         public void bind(Object data, int position) {
             super.bind(data, position);
             this.position = position ;
-            listenerRecycleViewAdapter.onShowData(data,view);
+            listenerRecycleViewAdapter.onShowData(data);
         }
 
         public void onClick(View view){
@@ -64,8 +64,9 @@ public class RecyclerViewAdapter extends BaseAdapter<Object,BaseHolder> {
     }
 
     public interface ListenerRecycleViewAdapter {
-        void onShowData(Object object, View view);
+        void onShowData(Object object);
         void onShowPosition(int position);
+        void onSetView(View view);
     }
 
 }

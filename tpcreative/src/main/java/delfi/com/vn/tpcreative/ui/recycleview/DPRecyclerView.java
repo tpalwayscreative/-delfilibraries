@@ -45,8 +45,13 @@ public class DPRecyclerView implements RecyclerViewAdapter.ListenerRecycleViewAd
     }
 
     @Override
-    public void onShowData(Object object, View view) {
-        listenerRecycleView.onShowData(object,view);
+    public void onShowData(Object object) {
+        listenerRecycleView.onShowData(object);
+    }
+
+    @Override
+    public void onSetView(View view) {
+        listenerRecycleView.onSetView(view);
     }
 
     @Override
@@ -58,7 +63,10 @@ public class DPRecyclerView implements RecyclerViewAdapter.ListenerRecycleViewAd
         @Override
         void onShowPosition(int position);
         @Override
-        void onShowData(Object object, View view);
+        void onShowData(Object object);
+
+        @Override
+        void onSetView(View view);
     }
 
 
