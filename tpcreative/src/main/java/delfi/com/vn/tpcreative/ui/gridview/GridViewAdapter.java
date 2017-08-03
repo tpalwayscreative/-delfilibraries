@@ -47,25 +47,12 @@ public class GridViewAdapter extends BaseAdapter {
       convertView = layoutInflater.inflate(resource,null);
       listenerGridViewAdapter.onSetView(convertView);
     }
-  //  final View viewHolder = (View)convertView.getTag();
-    listenerGridViewAdapter.onShowPosition(position);
     listenerGridViewAdapter.onShowData(list.get(position),convertView.getTag());
     return convertView;
   }
 
   public View getView(){
     return view;
-  }
-
-  public void changeCurrency(RelativeLayout layout) {
-    for (int i = 0; i < layout.getChildCount(); i++) {
-      View v = layout.getChildAt(i);
-      if (v instanceof TextView) {
-        TextView t = (TextView) v;
-        String text = t.getText().toString();
-        // ...
-      }
-    }
   }
 
   public void setView(View view){

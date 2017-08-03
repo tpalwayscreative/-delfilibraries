@@ -3,9 +3,11 @@ package delfi.com.vn.delfilibraries;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +53,8 @@ public class GridViewActivity extends BaseActivity implements DPGridView.Listene
 
     @Override
     public void onShowPosition(int position) {
+
+        Toast.makeText(getApplicationContext(),"Show position now : " + position,Toast.LENGTH_SHORT).show();
 
     }
 
