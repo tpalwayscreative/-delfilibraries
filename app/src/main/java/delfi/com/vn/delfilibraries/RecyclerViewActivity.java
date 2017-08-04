@@ -14,7 +14,7 @@ import delfi.com.vn.tpcreative.common.activity.BaseActivity;
 import delfi.com.vn.tpcreative.ui.recycleview.RecyclerViewAdapter;
 import delfi.com.vn.tpcreative.ui.recycleview.DPRecyclerView;
 
-public class MainActivity extends BaseActivity implements DPRecyclerView.ListenerRecycleView {
+public class RecyclerViewActivity extends BaseActivity implements DPRecyclerView.ListenerRecycleView {
 
     @BindView(R.id.rlHome)
     RecyclerView recyclerView;
@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements DPRecyclerView.Listene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recyclerview);
         list = new ArrayList<>();
         list.add(new CProduct("a"));
         list.add(new CProduct("b"));

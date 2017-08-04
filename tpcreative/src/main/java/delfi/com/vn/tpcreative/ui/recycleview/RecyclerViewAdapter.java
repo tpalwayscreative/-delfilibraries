@@ -3,7 +3,6 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import delfi.com.vn.tpcreative.common.adapter.BaseAdapter;
 import delfi.com.vn.tpcreative.common.adapter.BaseHolder;
 
