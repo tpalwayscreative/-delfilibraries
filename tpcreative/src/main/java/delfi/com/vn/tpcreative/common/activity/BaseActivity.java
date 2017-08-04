@@ -8,11 +8,10 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.MenuItem;
-
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import delfi.com.vn.tpcreative.R;
 import delfi.com.vn.tpcreative.common.ui.TypefaceSpan;
+import dk.delfi.core.R;
 
 public class BaseActivity extends AppCompatActivity {
     Unbinder unbinder;

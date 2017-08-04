@@ -7,8 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
-
-import delfi.com.vn.tpcreative.R;
+import dk.delfi.core.R;
 
 /**
  * Created by PC on 8/1/2017.

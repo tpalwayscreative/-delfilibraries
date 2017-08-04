@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import delfi.com.vn.tpcreative.Configs;
-import delfi.com.vn.tpcreative.R;
+import dk.delfi.core.R;
 import delfi.com.vn.tpcreative.common.utils.Utils;
 
 /**

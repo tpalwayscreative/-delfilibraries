@@ -6,7 +6,7 @@ import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.widget.EditText;
-import delfi.com.vn.tpcreative.R;
+import dk.delfi.core.R;
 
 
 /**

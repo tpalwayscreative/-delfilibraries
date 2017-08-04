@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DelfiAndroidCore.iml" filepath="$PROJECT_DIR$/DelfiAndroidCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/delfilibraries.iml" filepath="$PROJECT_DIR$/delfilibraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/tpcreative/tpcreative.iml" filepath="$PROJECT_DIR$/tpcreative/tpcreative.iml" />
     </modules>
   </component>
